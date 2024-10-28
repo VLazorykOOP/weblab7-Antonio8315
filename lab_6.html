@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk"><head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Anton Berehiy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        svg {
+            border: 2px solid black;
+        }
+
+        rect:nth-child(2) {
+            animation: recolor 3s infinite;
+        }
+
+        @keyframes recolor {
+            0% {
+                fill: blue;
+            }
+
+            100% {
+                fill: black;
+            }
+        }
+
+        rect:nth-child(4) {
+            animation: slide 5s infinite;
+        }
+
+        @keyframes slide {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(100px, 0);
+            }
+        }
+
+        polygon:nth-child(11) {
+            animation: rotate 5s infinite linear;
+            transform-origin: 300px 200px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        circle:nth-child(9) {
+            animation: resize 4s infinite;
+        }
+
+        @keyframes resize {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.5);
+            }
+        }
+
+        circle:nth-child(8) {
+            animation: distort 3s infinite;
+        }
+
+        @keyframes distort {
+
+            0%,
+            100% {
+                transform: skewX(0);
+            }
+
+            50% {
+                transform: skewX(50deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="arrowhead" markerWidth="50" markerHeight="7" refY="3.5" orient="auto">
+                <polygon points="0 0, 8 3.5, 0 7" fill="black"></polygon>
+            </marker>
+        </defs>
+
+        <rect x="400" y="50" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+        <rect x="150" y="50" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+        <rect x="400" y="200" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+        <rect x="150" y="200" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+        <rect x="350" y="150" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+        <rect x="200" y="150" width="50" height="50" fill="blue" stroke="black" stroke-width="1"></rect>
+
+        <circle cx="250" cy="100" r="50" fill="blue" stroke="black" stroke-width="1"></circle>
+        <circle cx="350" cy="100" r="50" fill="blue" stroke="black" stroke-width="1"></circle>
+        <circle cx="375" cy="225" r="25" fill="blue" stroke="black" stroke-width="1"></circle>
+
+        <polygon points="250,250 350,250 300,150" fill="blue" stroke="black" stroke-width="1"></polygon>
+
+        <line x1="0" y1="150" x2="440" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"></line>
+        <line x1="150" y1="300" x2="150" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"></line>
+
+        <line x1="50" y1="135" x2="50" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="35" y="170" font-size="12" fill="black">-2</text>
+
+        <line x1="100" y1="135" x2="100" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="85" y="170" font-size="12" fill="black">-1</text>
+
+        <line x1="200" y1="135" x2="200" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="185" y="170" font-size="12" fill="black">1</text>
+
+        <line x1="250" y1="135" x2="250" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="235" y="170" font-size="12" fill="black">2</text>
+
+        <line x1="300" y1="135" x2="300" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="285" y="170" font-size="12" fill="black">3</text>
+
+        <line x1="350" y1="135" x2="350" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="335" y="170" font-size="12" fill="black">4</text>
+
+        <line x1="400" y1="135" x2="400" y2="165" stroke="black" stroke-width="1"></line>
+        <text x="385" y="170" font-size="12" fill="black">5</text>
+
+        <line x1="135" y1="250" x2="165" y2="250" stroke="black" stroke-width="1"></line>
+        <text x="130" y="265" font-size="12" fill="black">-2</text>
+
+        <line x1="135" y1="200" x2="165" y2="200" stroke="black" stroke-width="1"></line>
+        <text x="130" y="215" font-size="12" fill="black">-1</text>
+
+        <text x="130" y="170" font-size="12" fill="black">0</text>
+
+        <line x1="135" y1="100" x2="165" y2="100" stroke="black" stroke-width="1"></line>
+        <text x="130" y="115" font-size="12" fill="black">1</text>
+
+        <line x1="135" y1="50" x2="165" y2="50" stroke="black" stroke-width="1"></line>
+        <text x="130" y="65" font-size="12" fill="black">2</text>
+
+        <text x="440" y="180" font-size="12" fill="black">X</text>
+        <text x="170" y="20" font-size="12" fill="black">Y</text>
+
+        <path id="curvedTextPath" d="M 50,150 A 100,100 0 0,0 325,150" fill="transparent" stroke="black"></path>
+
+        <text font-size="16" fill="black">
+            <textPath href="#curvedTextPath" startOffset="50%" text-anchor="middle">
+                Текст по кривій
+            </textPath>
+        </text>
+    </svg>
+
+
+</body></html>

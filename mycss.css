@@ -1,0 +1,216 @@
+/* Селектори тегів */
+h1, h2, p {
+    color: #333;
+    margin-bottom: 20px;
+    direction: ltr;
+  }
+  
+  /* Селектори класів */
+  .header, .content {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 20px;
+    border-width: thin;
+    border-style: groove;
+  }
+  
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Селектори атрибутів */
+  input[type="text"] {
+    border-width: 2px solid #000000;
+  }
+  
+  a[href^="https"] {
+    color: rgb(255, 128, 0);
+  }
+  
+  img[id="my photo"] {
+    float: left; /* Плаває ліворуч */
+    margin-right: 15px; /* Відступ праворуч */
+    width: 150px; /* Встановіть ширину зображення, як потрібно */
+    height: auto; /* Щоб зображення було пропорційним */
+    border-right-width: 3px;
+    border-left-width: 1px;
+    border-right-style: groove;
+    border-top-style: groove;
+    border-style: groove;
+  }
+  
+  .Navigation{
+    margin: 0px;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: #fca25e;
+    justify-content: center;
+  }
+  
+  div[id="Table"]{
+    border-right-style: ridge;
+    border-top-style: ridge;
+    border-style: ridge;
+    display: compact;
+    unicode-bidi: normal;
+    outline: auto;
+    outline-color: red; 
+  }
+  
+  img[alt~="photo"] {
+    border: 1px dashed red;
+  }
+  
+  /* Псевдокласи */
+  p:first-child {
+    color: rgb(255, 123, 0);
+  }
+  
+  bdi[id="company-bdi"]{
+    margin-left: 60px;
+  }
+  
+  
+  marquee[id="promo-text"]{
+  font-size: 40px;
+  height: 50px;
+  }
+  
+  input:enabled {
+    background-color: rgb(254, 150, 132);
+    display: run-in;
+  }
+  
+  p:lang(uk) {
+    font-style: italic;
+  }
+  
+  div:empty {
+    display: none;
+    float: none;
+  }
+  
+  /* Псевдоелементи */
+  p::first-line {
+    font-weight: bold;
+  }
+  
+  p[id="N"]::first-letter {
+    font-size: 2em;
+    color: red;
+  }
+  
+  /* Margin, Padding, Border */
+  .header {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    border-right-style: dashed;
+    border-top-style: dashed;
+    border-style: dashed;
+    display: table-header-group
+  }
+  
+  .content {
+    border-left-width:thin;
+    border-right-width: thin;
+    border-bottom-color: #00f;
+    border-left-color: #00f;
+    border-right-color: #00f;
+    border-right-style: none;
+    border-top-style:none;
+    border-style:none;
+    margin-bottom: auto;
+    unicode-bidi: bidi-override; 
+    overflow: visible;
+  }
+  
+  
+  /* Позиціювання елементів */
+  
+  div[feedback]{
+    display: inline;
+    position: static;
+    vertical-align: sub;
+    text-align: right;
+  }
+  
+  div[id="expirience"] {
+    display: inline-block;
+    vertical-align: top; 
+    width: calc(100% - 180px); 
+    margin-left: 10px; 
+  }
+  
+  .footer {
+    display: table-footer-group;
+    position: static;
+    z-index: auto;
+    overflow: auto; 
+    visibility: visible;
+  }
+  
+  .sidebar {
+    z-index: 3;
+    clear: none;
+    visibility: hidden; 
+  }
+  
+  /* Візуалізація елементів */
+  .container {
+    min-width: 300px;
+    min-height: 100px;
+    height: 50%;
+    line-height: 1.5;
+    vertical-align: bottom;
+    overflow: auto;
+  }
+  
+  .proj{
+  border:50px;
+  ;}
+  /* Колір і фон */
+  body {
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    background-image: url("https://kartinki.pics/uploads/posts/2022-12/1669954445_1-kartinkin-net-p-belii-fon-dlya-saita-krasivo-1.jpg");
+    background-position: 50% 50%;
+    background-attachment: scroll;
+    
+  }
+  
+  img[id="star"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 100px;
+    height: auto;
+  }
+  
+  a[id="navig"] {
+    text-decoration: none !important;
+    outline: auto;
+    padding: 5px;
+    background-color: white;
+    outline-color:  #000;
+    margin-bottom: 20px;
+    clear: left;
+    margin-top: 200px;
+  }
+  
+  table[id="table2"]{
+    width: 90%;
+  }
+  
+  tr[id="tr1"]{
+    background-color: #fca25e;
+  }

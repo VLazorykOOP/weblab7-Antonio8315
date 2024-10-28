@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук інформації</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        function searchInfo() {
+            // Отримуємо текст із текстового поля
+            let inputText = document.getElementById('inputText').value;
+
+            let words = inputText.match(/\b\w+\b/g);
+            let wordCount = words ? words.length : 0;
+
+            let specificWords = inputText.match(/\be\w*a\b/gi) || [];
+
+            let digits = inputText.match(/\d/g);
+            let digitCount = digits ? digits.length : 0;
+
+            let integers = inputText.match(/\b\d+\b/g) || [];
+
+            // Виводимо результати
+            let result = document.getElementById('result');
+            result.innerHTML = `
+                <p>Кількість слів: ${wordCount}</p>
+                <p>Слова, що починаються з "е" і закінчуються на "а": ${specificWords.join(', ') || 'Не знайдено'}</p>
+                <p>Кількість цифр: ${digitCount}</p>
+                <p>Цілі числа: ${integers.join(', ') || 'Не знайдено'}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Пошук інформації</h1>
+
+    <!-- Форма з текстовим полем і кнопкою -->
+    <form>
+        <label for="inputText">Введіть текст:</label>
+        <textarea id="inputText"></textarea>
+        <br><br>
+        <button type="button" onclick="searchInfo()">Пошук інформації</button>
+    </form>
+
+    <!-- Результати пошуку -->
+    <div class="result" id="result"></div>
+
+</body>
+</html>

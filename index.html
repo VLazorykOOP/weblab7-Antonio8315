@@ -1,12 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Script-Type" content="text/javascript" >
-    <title>Lab7</title>
+    <meta name="Author" content="Берегій Антон Павлович">
+    <title>Комп'ютерні аксесуари</title>
+    <link rel="stylesheet" href="mycss.css">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .content {
+            padding-top: 100px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            vertical-align: baseline;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, b, i {
+            transition: all 0.3s ease; /* Додаємо анімацію при зміні стилю */
+        }
+        .highlight {
+            background-color: yellow; /* Підсвічування при подіях */
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Функції для обробки подій
+        function onLoad() {
+            alert("Сторінка повністю завантажена!");
+        }
+
+        function onBeforeOnLoad() {
+            alert("Сторінка завантажується...");
+        }
+
+        function onError() {
+            alert("Виникла помилка!");
+        }
+
+        function onPageShow() {
+            alert("Сторінка стала видимою!");
+        }
+
+        function onResize() {
+            alert("Розмір вікна змінено!");
+        }
+        
+        function handleClick(event) {
+            alert("Подія click спрацювала на " + event.target.tagName);
+            event.target.classList.toggle("highlight");
+        }
+
+        function handleDoubleClick(event) {
+            alert("Подія double click спрацювала на " + event.target.tagName);
+            event.target.style.fontSize = "larger";
+        }
+
+        function handleMouseDown(event) {
+            alert("Подія mouse down спрацювала на " + event.target.tagName);
+            event.target.style.color = "blue";
+        }
+
+        function handleMouseMove(event) {
+            event.target.style.cursor = "pointer"; // Зміна курсора
+        }
+
+        function handleMouseOver(event) {
+            alert("Подія mouse over спрацювала на " + event.target.tagName);
+            event.target.style.textDecoration = "underline"; // Підкреслення тексту
+        }
+
+
+        // Додаємо обробники подій
+        window.onload = onLoad;
+        window.onbeforeunload = onBeforeOnLoad;
+        window.onerror = onError;
+        window.onpageshow = onPageShow;
+        window.onresize = onResize;
+        
+        window.onload = function() {
+            const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, b, i");
+            elements.forEach(element => {
+                element.onclick = handleClick;
+                element.ondblclick = handleDoubleClick;
+                element.onmousedown = handleMouseDown;
+                element.onmousemove = handleMouseMove;
+                element.onmouseover = handleMouseOver;
+            });
+        };
+    </script>
 </head>
 <body>
-    <h1> !!! Додайте свої сторінки сайту створені в лаб. роботах 1-6  </h1>
+    <div class="Navigation">
+        <h3 title="Про автора (мене)" align="center">Про Автора</h3>
+        <!-- Навігація -->
+        <nav id="nav1">
+            <a id="navig" href="C:\Users\Smart\github-classroom\VLazorykOOP\weblab7-Antonio8315\index.html">Автор</a>
+            <a id="navig" href="C:\Users\Smart\github-classroom\VLazorykOOP\weblab7-Antonio8315\main.html">Головна</a>
+            <a id="navig" href="C:\Users\Smart\github-classroom\VLazorykOOP\weblab7-Antonio8315\news.html">Новини</a> 
+        </nav>
+    </div>
+    <!-- Сторінка автора -->
+    <div class="content">
+        <h4 id="career-header" title="Кар'єра автора" lang="uk">Моя кар'єра</h4>
+        <img src="my photo.jpg" id="my photo" alt="photo">
+        <div id="expirience">
+            <h5 align="left" style="font-style: italic;" title="Досвід">Професійний досвід</h5>
+            <p align="justify" style="font-size: 14px;" title="Опис кар'єри">Мене звати Антон, і я засновник та директор компанії, що спеціалізується на розробці та постачанні високоякісних комп'ютерних аксесуарів. Моя кар'єра в галузі технологій розпочалася понад десять років тому, коли я вперше занурився в світ інновацій та розвитку.</p>
+
+            <h5 align="left" style="font-style: italic;" title="Мета">Моя мета</h5>
+            <p align="justify" style="font-size: 14px;" title="Опис мети">Моєю метою завжди було створення продуктів, які поєднують у собі інноваційність, надійність та зручність для користувача. Ми невпинно працюємо над тим, щоб забезпечити наших клієнтів найкращими рішеннями.</p>
+        </div>
+        <br id="break-1" class="clear" clear="both">
+
+        <h5 align="left" style="font-style: italic;" title="Команда">Сила команди</h5>
+        <p align="justify" style="font-size: 14px;" title="Опис команди">Я вірю в силу команди та в те, що саме злагоджена робота професіоналів дозволяє досягати великих результатів. Моя компанія постійно інвестує в розвиток своїх співробітників.</p>
+
+        <hr color="#000000" noshade size="2">
+
+        <u id="innovation-header" title="Інновації" lang="uk">Інновації та тенденції</u>
+        <p align="justify" style="font-size: 14px;" title="Опис інновацій">Ми постійно стежимо за тенденціями ринку, адже для нас важливо залишатися на передовій інновацій. Це дозволяє нам пропонувати клієнтам найсучасніші рішення.</p>
+
+        <p>Наші проєкти: </p>
+        <ul title="Projects" start="1" compact class="ul1">
+            <li><a class="proj" href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">Проєкт 1: https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a></li>
+            <br class="width_2">
+            <li><a class="proj" href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">Проєкт 2: https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a></li>
+            <br class="width_2">
+            <li><a class="proj" href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">Проєкт 3: https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a></li>
+        </ul>
+        <br id="break-2" class="clear" clear="both">
+        <br class="clear" clear="both">
+        <b lang="uk" id="feedback-header" class="feedback-title">Зворотний зв'язок</b>
+        <p align="justify" style="font-size: 14px;" title="Опис зворотного зв'язку">Крім того, я глибоко переконаний у важливості зворотного зв'язку з нашими клієнтами. Ми завжди відкриті до пропозицій і готові враховувати ваші побажання.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Малюнок 1" 
+            onmouseover="handleMouseOver(event)" 
+            onclick="handleClick(event)" 
+            ondblclick="handleDoubleClick(event)" 
+            onmousedown="handleMouseDown(event)" 
+            onmousemove="handleMouseMove(event)">
+            
+        <img src="https://via.placeholder.com/200" alt="Малюнок 2" 
+            onmouseover="handleMouseOver(event)" 
+            onclick="handleClick(event)" 
+            ondblclick="handleDoubleClick(event)" 
+            onmousedown="handleMouseDown(event)" 
+            onmousemove="handleMouseMove(event)">
+        
+        <img src="https://via.placeholder.com/200" alt="Малюнок 3" 
+            onmouseover="handleMouseOver(event)" 
+            onclick="handleClick(event)" 
+            ondblclick="handleDoubleClick(event)" 
+            onmousedown="handleMouseDown(event)" 
+            onmousemove="handleMouseMove(event)">
+    </div>
+    <div id="log" class="log"></div>
 </body>
+<img id="star" src="star.png">
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function processArrayTask() {
+            // Створюємо масив A з випадковими числами
+            let N = 10; 
+            let A = [];
+
+            for (let i = 0; i < N; i++) {
+                A.push(Math.floor(Math.random() * 20)); // Тут рандомні числа
+            }
+
+            let B = A.filter(function (element) {
+                return element > 10;
+            });
+
+            console.log('Масив A: ', A);
+            console.log('Масив B (елементи > 10): ', B);
+
+            // Виводимо масиви у текстове поле
+            let textarea = document.getElementById('arrayOutput');
+            textarea.value = 'Масив A: ' + A.join(', ') + '\n';
+            textarea.value += 'Масив B (елементи > 10): ' + B.join(', ');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Array Task</h1>
+
+    <!-- Форма з кнопкою та текстовим полем -->
+    <form>
+        <button type="button" onclick="processArrayTask()">Array Task</button>
+        <br><br>
+        <label for="arrayOutput">Результат:</label>
+        <textarea id="arrayOutput" readonly></textarea>
+    </form>
+
+</body>
+</html>
